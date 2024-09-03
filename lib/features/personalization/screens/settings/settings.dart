@@ -1,10 +1,8 @@
 import 'package:ecommerceshop/common/widgets/appbar/appbar.dart';
 import 'package:ecommerceshop/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:ecommerceshop/common/widgets/icons/t_circular_image.dart';
 import 'package:ecommerceshop/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ecommerceshop/common/widgets/texts/section_heading.dart';
 import 'package:ecommerceshop/utils/constants/colors.dart';
-import 'package:ecommerceshop/utils/constants/image_strings.dart';
 import 'package:ecommerceshop/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
