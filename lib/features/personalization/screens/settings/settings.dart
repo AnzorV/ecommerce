@@ -2,9 +2,12 @@ import 'package:ecommerceshop/common/widgets/appbar/appbar.dart';
 import 'package:ecommerceshop/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:ecommerceshop/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ecommerceshop/common/widgets/texts/section_heading.dart';
+import 'package:ecommerceshop/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerceshop/utils/constants/colors.dart';
 import 'package:ecommerceshop/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
@@ -21,9 +24,9 @@ class SettingsScreen extends StatelessWidget {
             TPrimaryHeaderContainer(child: Column(
               children: [
                 TAppBar(title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white),)),
-                const SizedBox(height: TSizes.spaceBtwSections),
 
-                 const TUserProfileTile(),
+
+                  TUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen())),
                const SizedBox(height: TSizes.spaceBtwSections),
               ],
             ),

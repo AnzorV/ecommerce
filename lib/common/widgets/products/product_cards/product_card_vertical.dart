@@ -1,5 +1,7 @@
+import 'package:ecommerceshop/features/shop/screens/product_details/product_detail.dart';
 import 'package:ecommerceshop/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/colors.dart';
@@ -23,7 +25,7 @@ class TProductCardVertical extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: (){},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
 
       /// Container with side paddings, color, edges, radius and shadow.
       child: Container(
