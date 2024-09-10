@@ -50,7 +50,6 @@ const TProductPriceText(price: '175', isLarge: true,),
 
           ],
         ),
-        Text('In Stock', style: Theme.of(context).textTheme.titleMedium,),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
         
          Row(

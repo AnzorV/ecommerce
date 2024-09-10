@@ -1,6 +1,7 @@
 import 'package:ecommerceshop/common/widgets/appbar/appbar.dart';
 import 'package:ecommerceshop/common/widgets/icons/t_circular_icon.dart';
 import 'package:ecommerceshop/common/widgets/images/t_rounded_image.dart';
+import 'package:ecommerceshop/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:ecommerceshop/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:ecommerceshop/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ecommerceshop/utils/constants/colors.dart';
@@ -31,6 +32,9 @@ class ProductDetailScreen extends StatelessWidget {
                   TRatingAndShare(),
 
                   TProductMetaData(),
+
+
+                  TProductAttributes(),
                 ],
               ),
             )
