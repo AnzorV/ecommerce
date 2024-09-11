@@ -63,13 +63,14 @@ class TProductAttributes extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwItems,),
 
-          const Column(
+        const Column(
           children: [
             TSectionHeading(title: 'Colors'),
             SizedBox(height: TSizes.spaceBtwItems/2),
             TChoiceChip(text: 'Green', selected: true,),
           ],
         ),
+
       ],
     );
   }
