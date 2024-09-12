@@ -18,6 +18,7 @@ class TProductAttributes extends StatelessWidget {
     return Column(
       children: [
         TRoundedContainer(
+          padding: const EdgeInsets.all(TSizes.md),
           backgroundColor: dark ? TColors.darkerGrey : TColors.grey,
           child:   Column(
             children: [
@@ -63,14 +64,41 @@ class TProductAttributes extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwItems,),
 
-        const Column(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(title: 'Colors'),
-            SizedBox(height: TSizes.spaceBtwItems/2),
-            TChoiceChip(text: 'Green', selected: true,),
+            const TSectionHeading(title: 'Colors'),
+            const SizedBox(height: TSizes.spaceBtwItems/2),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(text: 'Green', selected: true, onSelected: (value){},),
+                TChoiceChip(text: 'Blue', selected: false, onSelected: (value){},),
+                TChoiceChip(text: 'Yellow', selected: false, onSelected: (value){},),
+              ],
+            ),
+
+
           ],
         ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const TSectionHeading(title: 'Size'),
+            const SizedBox(height: TSizes.spaceBtwItems/2),
 
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(text: 'EU 34', selected: true, onSelected: (value){},),
+                TChoiceChip(text: 'EU 36', selected: false, onSelected: (value){},),
+                TChoiceChip(text: 'EU 38', selected: false, onSelected: (value){},),
+              ],
+            ),
+
+
+          ],
+        ),
       ],
     );
   }
