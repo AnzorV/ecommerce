@@ -1,15 +1,21 @@
 import 'package:ecommerceshop/common/widgets/appbar/appbar.dart';
+import 'package:ecommerceshop/features/shop/screens/product_reviews/widgets/progress_indicator_and_rating.dart';
+import 'package:ecommerceshop/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
+import 'package:ecommerceshop/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:ecommerceshop/utils/constants/colors.dart';
 import 'package:ecommerceshop/utils/constants/sizes.dart';
-import 'package:ecommerceshop/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:iconsax/iconsax.dart';
+
+import '../../../../common/widgets/products/ratings/rating_indicator.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: const TAppBar(title: Text('Reviews & Ratings',), showBackArrow: true,),
 
       body: SingleChildScrollView(
@@ -20,20 +26,16 @@ class ProductReviewsScreen extends StatelessWidget {
           children: [
             const Text('Ratings and reviews are verified and are from people who use the same type of device that you use.'),
             const SizedBox(height: TSizes.spaceBtwItems),
-          Row(
-            children: [
-              Expanded(flex: 3, child: Text('4.8', style: Theme.of(context).textTheme.displayLarge,)),
+          const TOverallProductRating(),
+            const TRatingBarIndicator(rating: 3.5,),
+            Text("12,611", style: Theme.of(context).textTheme.bodySmall),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
-              Expanded(
-                flex: 7,
-                child: Column(
-                  children: [
-                    TRatingProgressIndicator()
-                  ],
-                ),
-              )
-            ],
-          )
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
+
           ],
         ),
 
@@ -44,30 +46,5 @@ class ProductReviewsScreen extends StatelessWidget {
   }
 }
 
-class TRatingProgressIndicator extends StatelessWidget {
-  const TRatingProgressIndicator({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(flex: 1, child: Text('5',style: Theme.of(context).textTheme.bodyMedium,)),
-        Expanded(
-          flex: 11,
-          child: SizedBox(
-            width: TDeviceUtils.getScreenWidth(context) * 0.5,
-            child: LinearProgressIndicator(
-              value: 0.5,
-              minHeight: 11,
-              backgroundColor: TColors.grey,
-              borderRadius: BorderRadius.circular(7),
-              valueColor: const AlwaysStoppedAnimation(TColors.primary),
-            ),
-          ),
-        )
-      ],
-    );
-  }
-}
+
