@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../common/widgets/images/t_rounded_image.dart';
-import '../../../../../common/widgets/texts/product_title_text.dart';
-import '../../../../../common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
-import '../../../../../utils/constants/colors.dart';
-import '../../../../../utils/constants/image_strings.dart';
-import '../../../../../utils/constants/sizes.dart';
-import '../../../../../utils/helpers/helper_functions.dart';
+import '../../images/t_rounded_image.dart';
+import '../../texts/product_title_text.dart';
+import '../../texts/t_brand_title_text_with_verified_icon.dart';
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
 class TCartItem extends StatelessWidget {
   const TCartItem({
