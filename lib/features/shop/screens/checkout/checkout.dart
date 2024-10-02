@@ -2,7 +2,6 @@ import 'package:ecommerceshop/common/widgets/appbar/appbar.dart';
 import 'package:ecommerceshop/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ecommerceshop/common/widgets/success_screen/success_screen.dart';
 import 'package:ecommerceshop/features/shop/screens/cart/widgets/cart_items.dart';
-import 'package:ecommerceshop/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:ecommerceshop/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:ecommerceshop/features/shop/screens/checkout/widgets/billing_payment_section.dart';
 import 'package:ecommerceshop/navigation_menu.dart';
@@ -38,16 +37,16 @@ class CheckoutScreen extends StatelessWidget {
            showBorder: true,
            padding: const EdgeInsets.all(TSizes.md),
            backgroundColor: dark ? TColors.black : TColors.white,
-           child: Column(
+           child: const Column(
              children: [
                   TBillingAmountSection(),
-               const SizedBox(height: TSizes.spaceBtwItems,),
+               SizedBox(height: TSizes.spaceBtwItems,),
 
-               const Divider(),
-               const SizedBox(height: TSizes.spaceBtwItems,),
+               Divider(),
+               SizedBox(height: TSizes.spaceBtwItems,),
 
                TBillingPaymentSection(),
-               const SizedBox(height: TSizes.spaceBtwItems,),
+               SizedBox(height: TSizes.spaceBtwItems,),
 
              ],
            ),

@@ -1,14 +1,9 @@
-import 'package:ecommerceshop/common/widgets/appbar/appbar.dart';
-import 'package:ecommerceshop/common/widgets/icons/t_circular_icon.dart';
-import 'package:ecommerceshop/common/widgets/images/t_rounded_image.dart';
 import 'package:ecommerceshop/common/widgets/texts/section_heading.dart';
 import 'package:ecommerceshop/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:ecommerceshop/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:ecommerceshop/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:ecommerceshop/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ecommerceshop/features/shop/screens/product_reviews/product_reviews.dart';
-import 'package:ecommerceshop/utils/constants/colors.dart';
-import 'package:ecommerceshop/utils/constants/image_strings.dart';
 import 'package:ecommerceshop/utils/constants/sizes.dart';
 import 'package:ecommerceshop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +11,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
-import '../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
@@ -25,7 +19,7 @@ class ProductDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
