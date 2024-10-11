@@ -21,16 +21,13 @@ class SignupController extends GetxController {
     try {
       TFullScreenLoader.openLoadingDialog('Загрузка, мы обрабатываем вашу информацию...', TImages.docerAnimation);
 
-          final isConnected = await NetworkManager.instance.isConnected();
-          if (!isConnected)  {
-            TFullScreenLoader.stopLoading();
-            return;
-          }
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) return;
 
-          if(!signupFormKey.currentState!.validate()) {
-            TFullScreenLoader.stopLoading();
-            return;
-          }
+
+          if(!signupFormKey.currentState!.validate()) return;
+
+
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
 
