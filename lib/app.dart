@@ -1,5 +1,4 @@
 import 'package:ecommerceshop/bindings/general_bindings.dart';
-import 'package:ecommerceshop/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:ecommerceshop/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerceshop/utils/theme/theme.dart';

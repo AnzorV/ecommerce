@@ -1,5 +1,4 @@
 import 'package:ecommerceshop/features/authentication/controllers/signup/signup_controller.dart';
-import 'package:ecommerceshop/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecommerceshop/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:ecommerceshop/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
@@ -71,13 +70,15 @@ class TSignupForm extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
-          TextFormField(
-            validator: (value) => TValidator.validatePassword(value),
-
-            controller: controller.password,
-
-            obscureText: true,
-            decoration: const InputDecoration(labelText: TTexts.password, prefixIcon: Icon(Iconsax.password_check), suffixIcon: Icon(Iconsax.eye_slash)),
+          Obx(
+    () => TextFormField(
+              validator: (value) => TValidator.validatePassword(value),
+            
+              controller: controller.password,
+            
+              obscureText: controller.hidePassword.value,
+              decoration:  InputDecoration(labelText: TTexts.password, prefixIcon:  const Icon(Iconsax.password_check), suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, icon:  Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye))),
+            ),
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -85,7 +86,7 @@ class TSignupForm extends StatelessWidget {
 
           const SizedBox(height: TSizes.spaceBtwSections),
 
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.signup, child: const Text(TTexts.createAccount)))
+          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.signup(), child: const Text(TTexts.createAccount)))
         ],
       ),
     );
